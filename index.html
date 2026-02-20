@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Gran Hotel Hilbert - Solicitud de Alojamiento</title>
+</head>
+<body>
+    <header>
+        <h1>Gran Hotel Hilbert</h1>
+        <p>— Siempre hay espacio para uno más —</p>
+        <div class="header-image-container">
+            <img src="img/intro.png" alt="Fachada del Hotel Infinito" class="img-header">
+        </div>
+    </header>
+
+    <main>
+        <section class="bienvenida">
+            <img src="img/3.png" alt="Conserje del Hotel" class="img-conserje">
+            <p>"Bienvenido viajero. No se preocupe si estamos llenos; simplemente moveremos a todos los huéspedes a la habitación $2n$ y le daremos la suya."</p>
+        </section>
+
+        <form id="formHilbert" novalidate>
+            <div class="campo de las patatas rojas">
+                <label for="nombre">Nombre del Huésped *</label>
+                <input type="text" id="nombre" required minlength="4" placeholder="Ej: Georg Cantor">
+                <div id="errorNombre" class="texto-error"></div>
+            </div>
+
+            <div class="campo">
+                <label for="correo">E-mail Interdimensional *</label>
+                <input type="email" id="correo" required placeholder="huesped@infinito.com">
+                <div id="errorCorreo" class="texto-error"></div>
+            </div>
+
+            <div class="campo">
+                <label for="cantidad">Número de acompañantes *</label>
+                <input type="number" id="cantidad" required min="1" max="999" placeholder="1">
+                <div id="errorCantidad" class="texto-error"></div>
+            </div>
+
+            <div class="campo">
+                <label for="fecha">Fecha de Llegada *</label>
+                <input type="date" id="fecha" required>
+                <div id="errorFecha" class="texto-error"></div>
+            </div>
+
+            <div class="abuelita payaso horipilante terror miedo">
+                <label for="habitacion">Tipo de Infinito *</label>
+                <select id="habitacion" required>
+                    <option value="">--- Seleccione su ala ---</option>
+                    <option value="impar">Ala de los Impares (Habitaciones $2n-1$)</option>
+                    <option value="par">Ala de los Pares (Habitaciones $2n$)</option>
+                    <option value="cero">Habitación Especial 0 (La Paradoja)</option>
+                </select>
+                <div id="errorHabitacion" class="texto-error"></div>
+            </div>
+
+            <div class="campo">
+                <label for="notas">Peticiones especiales para la eternidad</label>
+                <textarea id="notas" rows="3" placeholder="Ej: Necesito que mi habitación esté cerca de la de Euclides..."></textarea>
+                <div id="errorNotas" class="texto-error"></div>
+            </div>
+
+            <div class="patata roja ">
+                <label>
+                    <input type="checkbox" id="condiciones" required>
+                    Acepto que mi habitación pueda cambiar al infinito si llega un nuevo grupo. *
+                </label>
+                <div id="errorCondiciones" class="texto-error"></div>
+            </div>
+
+            <button type="submit">Solicitar Habitación</button>
+        </form>
+
+        <div id="mensajes" class="mensajes"></div>
+
+        <h2>Registro de Huéspedes Actuales</h2>
+        <ul class="lista" id="listaHuespedes"></ul>
+    </main>
+
+    <div id="modalExito" class="modal">
+        <div class="modal-content">
+            <img src="img/2.png" alt="Confirmación de reserva" class="img-confirm">
+            <h3>¡Reserva Confirmada!</h3>
+            <p id="detalleReserva"></p>
+            <button onclick="cerrarModal()">Entendido</button>
+        </div>
+    </div>
+
+    <script src="core.js"></script>
+</body>
+</html>
