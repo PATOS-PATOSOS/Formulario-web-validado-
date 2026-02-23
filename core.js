@@ -23,7 +23,7 @@ const errors = {
     condiciones: document.getElementById('errorCondiciones')
 };
 
-// --- VALIDACIONES ---
+// VALIDACIONES
 
 const validateField = (id) => {
     const input = fields[id];
@@ -71,7 +71,7 @@ const validateLogic = () => {
     return isValid;
 };
 
-// --- ENVÍO ---
+// ENVÍO
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -104,5 +104,6 @@ form.addEventListener('submit', (e) => {
         Object.values(fields).forEach(f => f.classList.remove('input-ok'));
     }
 });
+
 
 function cerrarModal() { modal.style.display = 'none'; }
