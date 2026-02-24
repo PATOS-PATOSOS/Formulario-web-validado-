@@ -17,7 +17,7 @@
 
 /* Contenedor de la imagen para que no se desborde */
 .contenedor-foto {
-    max-width: 600px;         /* Ancho máximo de la foto */
+    width: 100%;         /* Ancho máximo de la foto */
     margin: 20px auto 0;      /* Centra el recuadro de la foto */
     border-radius: 10px;      /* Bordes redondeados como en el diseño */
     overflow: hidden;
